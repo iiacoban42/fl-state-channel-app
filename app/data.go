@@ -18,8 +18,8 @@ type FLAppData struct {
 	Round 	   uint8
 	RoundPhase uint8
 	Weight 	  string
-	Accuracy  [3]uint8
-	Loss 	  [3]uint8
+	Accuracy  [10]uint8
+	Loss 	  [10]uint8
 }
 
 func (d *FLAppData) String() string {
@@ -121,7 +121,7 @@ func (d *FLAppData) Set(model string, numberOfRounds int, weight string, accurac
 		d.Accuracy[d.Round] = uint8safe(uint16(accuracy))
 		d.Loss[d.Round] = uint8safe(uint16(loss))
 		d.Model = model
-		
+
 		if d.Round == d.NumberOfRounds - 1 {
 			d.RoundPhase = 3
 		} else if d.Round < d.NumberOfRounds - 1 {

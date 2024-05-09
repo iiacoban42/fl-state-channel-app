@@ -60,7 +60,7 @@ contract FLApp is App {
 
         uint8 numRounds = uint8(to.appData[numberOfRoundsIndex]);
         uint8 accuracyIndex = weightIndex + cidlen;
-        uint8 lossIndex = accuracyIndex + numRounds;
+        uint8 lossIndex = accuracyIndex + 10;
 
         // // uint8 appDataLength = lossIndex + numRounds;
 
